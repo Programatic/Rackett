@@ -1,9 +1,12 @@
+# Ignore Misc Rust
 /target
-/frontent
-project.org
-/vue-material
 cargo.lock
 
+# Ignore Frontend
+/frontend
+/vue-material
 frontend-dev/package-lock.json
 frontend-dev/node_modules
 
+# Ignore Misc
+project.org
