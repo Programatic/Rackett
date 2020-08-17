@@ -69,7 +69,7 @@ export default new Router({
         {
           name: 'Search',
           path: 'search',
-          component: () => import('@/views/dashboard/pages/Search'),
+          component: () => import('@/views/dashboard/pages/search/Search'),
         },
       ],
     },

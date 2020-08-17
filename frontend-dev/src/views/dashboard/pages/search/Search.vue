@@ -4,6 +4,10 @@
     fluid
     tag="section"
   >
+    <download
+      :display="dialog"
+      @closed="dialog = false"
+    />
     <base-material-snackbar
       v-model="snackbar"
       type=""
@@ -13,6 +17,7 @@
     >
       Downloading <span class="font-weight-bold">&nbsp;{{ snackbar_title }}&nbsp;</span>
     </base-material-snackbar>
+
     <v-row
       justify="center"
     >
@@ -116,10 +121,13 @@
 <script>
   import axios from 'axios'
   import qs from 'querystring'
+  import Download from './Download'
 
   export default {
     name: 'Search',
-
+    components: {
+      download: Download,
+    },
     data: () => ({
       dialog: false,
       snackbar: false,
@@ -149,9 +157,8 @@
     methods: {
       download (title, event) {
         // TODO: This is for queuing and automatic donwloading
-        this.snackbar = true
-        this.snackbar_title = title.Title + ' (' + title.Year + ')'
-        console.log(event)
+        // this.snackbar = true
+        // this.snackbar_title = title.Title + ' (' + title.Year + ')'
       },
       get_search () {
         this.searching = true

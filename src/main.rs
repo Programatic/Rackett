@@ -48,7 +48,7 @@ async fn search(form: web::Form<SearchData>) -> Result<impl Responder, AWError> 
 
 #[post("/indexers/search")]
 async fn indexers_search(form: web::Form<IndexerSearch>) -> Result<impl Responder, AWError> {
-    // TODO: Update to search active vector
+    // TODO: Update to search vector of currently used indexers. Simply using pirate bay only for test purposes
     let p = PirateBay::new();
     let t = p.search(EntertainmentType::MOVIE, &form.search).await.unwrap();
     let mut ret = String::from("{\"torrents\": [");
